@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroupComponent } from './form-group/form-group.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormGroupComponent
+    FormGroupComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
