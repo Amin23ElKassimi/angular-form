@@ -1,18 +1,21 @@
-<form>
+<!--   -->
+<form #formin="ngForm" (ngSubmit)="onSubmit(formin)" novalidate>
   <mat-form-field>
     <mat-label>Input</mat-label>
-    <input matInput />
+    <input matInput name="nome" ngModel required />
   </mat-form-field>
   <mat-form-field>
     <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
+    <mat-select name="options" ngModel required>
+      <mat-option value="blue">Blue</mat-option>
+      <mat-option value="red">Red</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput name="intext" ngModel required></textarea>
   </mat-form-field>
-  <input type="submit" />
+  <button mat-raised-button type="submit" [disabled]="!formin.valid">
+    Click me!
+  </button>
 </form>

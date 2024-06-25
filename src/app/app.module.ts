@@ -8,7 +8,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import { MatIconModule } from '@angular/material/icon';
-
+import { FormsModule } from '@angular/forms';  
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +32,8 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     MatRadioModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
     
   ],
   providers: [],
