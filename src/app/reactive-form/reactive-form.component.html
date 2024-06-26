@@ -2,6 +2,9 @@
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput name="nome" formControlName="name" />
+    <p *ngIf="!homeform.get('name')?.valid || homeform.get('name')?.untouched">
+      Inserisci il nome
+    </p>
   </mat-form-field>
 
   <mat-form-field>
