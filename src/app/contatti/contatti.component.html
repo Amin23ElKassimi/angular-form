@@ -1,5 +1,16 @@
-<p>List contacts</p>
+<p
+style="color: chartreuse;"
+>List contacts:</p>
 
-<div *ngFor="let persona of persone">
-    <p>{{ persona.nome }} {{ persona.cognome }}</p>
+
+<div *ngIf="!isProfile;  else profiloContatto" >
+    <div *ngFor="let persona of persone">
+        <p>{{ persona.nome }} {{ persona.cognome }}</p>
+    </div>
 </div>
+
+<ng-template #profiloContatto>
+    <p>Profilo Querty</p>
+    <p>Profilo di:  {{persona.nome}} {{persona.cognome}}</p>
+</ng-template>
+ 

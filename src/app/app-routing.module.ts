@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contatti', component: ContattiComponent },
+  { path: 'contatti/:id', component: ContattiComponent },
   { path: 'contact', component: ContactComponent }
 
 ];
