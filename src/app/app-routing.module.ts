@@ -7,7 +7,7 @@ import { ContattiComponent } from './components/contatti/contatti.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/homepage' },
+  { path: '', pathMatch: 'full', redirectTo: '/' },
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   {
