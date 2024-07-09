@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { ServizioProvaService } from '../service/servizio-prova.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -7,13 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  id: number
+  persona: any
 
-  @Input() persona: any
-
-
-  constructor() { }
+  constructor(
+    private servizioProva: ServizioProvaService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    // subscribe aggiorna i cambiamenti DEL id della rotta
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.id = +this.route.snapshot.paramMap.get('id')
+      this.persona = this.servizioProva.getPersona((this.id))
+    })
   }
 
 }

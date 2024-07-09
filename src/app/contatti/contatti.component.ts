@@ -11,29 +11,15 @@ export class ContattiComponent implements OnInit {
 
   // Variables
   persone: any
-  persona: any
-  isProfile: boolean
 
   // Constructor
   constructor(
-    private servizioProva: ServizioProvaService,
-    private route: ActivatedRoute
+    private servizioProva: ServizioProvaService
   ) { }
 
   ngOnInit(): void {
-    // Se c'e' un numero nell'id metti true se no metti false
-    if (this.route.snapshot.paramMap.get('id')) {
-      this.isProfile = true
-      this.persona = this.servizioProva.getPersona(parseInt(this.route.snapshot.paramMap.get('id')!))
-    }
-    else {
-      this.isProfile = false
-      this.persone = this.servizioProva.getPersone()
-    }
 
-    // Print id actual Route
-    console.log(this.route.snapshot.paramMap.get('id'))
-    console.log(this.isProfile)
+    this.persone = this.servizioProva.getPersone()
 
   }
 
