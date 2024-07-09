@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   {
     path: 'contatti', component: ContattiComponent,
+    // Routers child
     children: [
       { path: ':id', component: ContactComponent }
     ]
