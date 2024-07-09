@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ServizioProvaService } from '../service/servizio-prova.service';
+import { ServizioProvaService } from '../../service/servizio-prova.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-contact',
