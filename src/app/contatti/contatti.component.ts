@@ -22,7 +22,6 @@ export class ContattiComponent implements OnInit {
 
   ngOnInit(): void {
     // Se c'e' un numero nell'id metti true se no metti false
-    this.isProfile = !this.route.snapshot.paramMap.get("id") ? false : true
     if (this.route.snapshot.paramMap.get('id')) {
       this.isProfile = true
       this.persona = this.servizioProva.getPersona(parseInt(this.route.snapshot.paramMap.get('id')!))
