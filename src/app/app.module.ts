@@ -20,6 +20,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ContattiComponent } from './contatti/contatti.component';
+import { NotfoundComponent } from './componenti/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ContattiComponent } from './contatti/contatti.component';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    ContattiComponent
+    ContattiComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
