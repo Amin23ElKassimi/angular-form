@@ -6,6 +6,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ContattiComponent } from './components/contatti/contatti.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AuthGuard } from './auth/auth.guard';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/' },
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: ':id', component: ContactComponent }
     ]
   },
+  { path: 'form', component: ReactiveFormComponent },
   { path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: '/404' }
 
