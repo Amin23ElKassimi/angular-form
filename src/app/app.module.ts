@@ -9,7 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +31,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     ContactComponent,
     HomeComponent,
     ContattiComponent,
-    NotfoundComponent
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [],
