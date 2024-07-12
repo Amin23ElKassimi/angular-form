@@ -26,10 +26,10 @@ export class ContattiComponent implements OnInit {
     console.log(this.people)
 
     this.fireBase.getPersone().subscribe((data: any) => {
-      console.log(data)
       this.persone = Object.keys(data).map((key) => { return data[key] })
-      console.log(this.persone)
     })
+
+
 
   }
 

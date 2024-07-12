@@ -19,11 +19,21 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     // subscribe aggiorna i cambiamenti DEL id della rotta
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = +params.get('id')
-      this.persona = this.servizioProva.getPersona((this.id))
+      this.fireBase.getPersone().subscribe((data: any) => {
+        const persone = Object.keys(data).map(key => data[key]);
+        this.persona = persone[this.id];
+      });
     })
+
+
+
+
+
+
   }
 
 }
