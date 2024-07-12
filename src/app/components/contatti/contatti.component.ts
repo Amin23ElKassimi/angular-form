@@ -12,6 +12,7 @@ export class ContattiComponent implements OnInit {
 
   // Variables
   persone: any
+  people: any
 
   // Constructor
   constructor(
@@ -21,8 +22,14 @@ export class ContattiComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.persone = this.servizioProva.getPersone()
-    this.persone = this.fireBase.getPersone()
+    this.people = this.servizioProva.getPersone()
+    console.log(this.people)
+
+    this.fireBase.getPersone().subscribe((data: any) => {
+      console.log(data)
+      this.persone = Object.keys(data).map((key) => { return data[key] })
+      console.log(this.persone)
+    })
 
   }
 

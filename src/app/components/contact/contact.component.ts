@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServizioProvaService } from '../../service/servizio-prova.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { FirebaseService } from 'src/app/service/firebase.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -13,7 +14,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private servizioProva: ServizioProvaService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private fireBase: FirebaseService
   ) { }
 
   ngOnInit(): void {
