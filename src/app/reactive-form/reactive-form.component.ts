@@ -36,7 +36,8 @@ export class ReactiveFormComponent implements OnInit {
       {
         name: this.homeform.value.name,
         email: this.homeform.value.email,
-        color: this.homeform.value.color
+        color: this.homeform.value.color,
+        intext: this.homeform.value.intext
       }
     ).subscribe(data => { console.log(data) })
 

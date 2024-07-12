@@ -18,9 +18,9 @@ export class FirebaseService {
   }
 
 
-  getPersone(url: string) {
+  getPersone() {
 
-    return this.http.get(url)
+    return this.http.get(this.url)
 
   }
 

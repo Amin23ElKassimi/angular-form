@@ -9,13 +9,13 @@ export class ServizioProvaService {
   constructor() { }
 
   persone = [
-    { nome: "Amin", cognome: "elkassimi", ispnline: true, color: "blue" },
-    { nome: "Frank", cognome: "Bodengan", ispnline: true, color: "red" },
-    { nome: "Pippo", cognome: "Hskimi", ispnline: false, color: "yellow" },
-    { nome: "Alessia", cognome: "Larson", ispnline: true, color: "green" },
-    { nome: "Giuseppe", cognome: "pappi", ispnline: false, color: "brown" },
-    { nome: "Enzo", cognome: "zacca", ispnline: true, color: "black" },
-    { nome: "Gaia", cognome: "papa", ispnline: false, color: "white" }
+    { nome: "Amin", cognome: "elkassimi", isOnline: true, color: "blue" },
+    { nome: "Frank", cognome: "Bodengan", isOnline: true, color: "red" },
+    { nome: "Pippo", cognome: "Hskimi", isOnline: false, color: "yellow" },
+    { nome: "Alessia", cognome: "Larson", isOnline: true, color: "green" },
+    { nome: "Giuseppe", cognome: "pappi", isOnline: false, color: "brown" },
+    { nome: "Enzo", cognome: "zacca", isOnline: true, color: "aqua" },
+    { nome: "Gaia", cognome: "papa", isOnline: false, color: "deeppink" }
   ]
 
   getPersone() {

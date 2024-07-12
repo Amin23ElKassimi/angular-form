@@ -21,7 +21,8 @@ export class ContattiComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.persone = this.servizioProva.getPersone()
+    // this.persone = this.servizioProva.getPersone()
+    this.persone = this.fireBase.getPersone()
 
   }
 
