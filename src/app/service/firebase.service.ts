@@ -8,10 +8,19 @@ export class FirebaseService {
 
   constructor(private http: HttpClient) { }
 
+  // Url FIREBASE
+  url: string = 'https://corso-angular-5a5b9-default-rtdb.europe-west1.firebasedatabase.app/persone.json'
 
-  insertPersona(url: string, body: {}) {
+  insertPersona(body: {}) {
 
-    return this.http.post(url, body)
+    return this.http.post(this.url, body)
+
+  }
+
+
+  getPersone(url: string) {
+
+    return this.http.get(url)
 
   }
 

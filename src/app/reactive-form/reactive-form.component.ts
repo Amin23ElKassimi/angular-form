@@ -33,8 +33,11 @@ export class ReactiveFormComponent implements OnInit {
     console.log(this.homeform)
 
     this.firebase.insertPersona(
-      'https://corso-angular-5a5b9-default-rtdb.europe-west1.firebasedatabase.app/persone.json',
-      { name: this.homeform.value.name, email: this.homeform.value.email }
+      {
+        name: this.homeform.value.name,
+        email: this.homeform.value.email,
+        color: this.homeform.value.color
+      }
     ).subscribe(data => { console.log(data) })
 
   }

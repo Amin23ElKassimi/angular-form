@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServizioProvaService } from '../../service/servizio-prova.service';
 import { ActivatedRoute } from '@angular/router';
+import { FirebaseService } from 'src/app/service/firebase.service';
 
 @Component({
   selector: 'app-contatti',
@@ -14,7 +15,8 @@ export class ContattiComponent implements OnInit {
 
   // Constructor
   constructor(
-    private servizioProva: ServizioProvaService
+    private servizioProva: ServizioProvaService,
+    private fireBase: FirebaseService
   ) { }
 
   ngOnInit(): void {
