@@ -43,5 +43,14 @@ export class ReactiveFormComponent implements OnInit {
 
   }
 
+  onDeletePersona() {
+    this.firebase.deletePersona('-O1aipUuGQHBlvSr92wN')
+      .subscribe(data => {
+        console.log(data)
+
+      })
+  }
+
+
 
 }
