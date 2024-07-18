@@ -13,6 +13,7 @@ export class ContattiComponent implements OnInit {
   // Variables
   persone: any
   people: any
+  actualID: string
 
   // Constructor
   constructor(
@@ -22,15 +23,34 @@ export class ContattiComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.people = this.servizioProva.getPersone()
-    console.log(this.people)
+    this.people = this.fireBase.getPersone()
 
     this.fireBase.getPersone().subscribe((data: any) => {
-      this.persone = Object.keys(data).map((key) => { return data[key] })
+      this.persone = Object.keys(data).map((key) => {
+        // Aggiungere la proprieta che si chiama id e la fai uguale a data.key che genera firebase
+        data[key]['id'] = key
+        return data[key]
+      })
     })
 
-
-
   }
+
+  onDeletePersona() {
+    this.fireBase.deletePersona(this.actualID)
+      .subscribe(data => {
+        console.log(data)
+
+      })
+  }
+
+
+  logid() {
+    // this.actualID =
+    console.log("actual id: " + this.actualID)
+    console.log(this.people)
+  }
+
+
+
 
 }

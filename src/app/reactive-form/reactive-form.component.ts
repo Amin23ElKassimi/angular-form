@@ -12,7 +12,7 @@ export class ReactiveFormComponent implements OnInit {
   homeform!: FormGroup;
 
 
-  constructor(private firebase: FirebaseService) { }
+  constructor(private fireBase: FirebaseService) { }
 
   ngOnInit(): void {
 
@@ -32,7 +32,7 @@ export class ReactiveFormComponent implements OnInit {
   onSubmit(): void {
     console.log(this.homeform)
 
-    this.firebase.insertPersona(
+    this.fireBase.insertPersona(
       {
         name: this.homeform.value.name,
         email: this.homeform.value.email,
@@ -44,7 +44,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onDeletePersona() {
-    this.firebase.deletePersona('-O1aipUuGQHBlvSr92wN')
+    this.fireBase.deletePersona('-O1aipUuGQHBlvSr92wN')
       .subscribe(data => {
         console.log(data)
 
