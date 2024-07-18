@@ -39,15 +39,13 @@ export class ContattiComponent implements OnInit {
     this.fireBase.deletePersona(this.actualID)
       .subscribe(data => {
         console.log(data)
-
       })
   }
 
 
-  logid() {
-    // this.actualID =
-    console.log("actual id: " + this.actualID)
-    console.log(this.people)
+  logid(id: number) {
+    console.log("actual id: " + this.persone[id].id)
+    this.actualID = this.persone[id].id
   }
 
 
