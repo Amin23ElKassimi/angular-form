@@ -48,6 +48,14 @@ export class ContattiComponent implements OnInit {
     this.actualID = this.persone[id].id
   }
 
+  onPatchPerson() {
+    this.fireBase.patchPerson(this.actualID,
+      {}
+
+    )
+
+  }
+
 
 
 

@@ -1,11 +1,14 @@
-<div >
-<p style="color: chartreuse;"
->List contacts:</p>
-    <div *ngFor="let persona of persone, index as i">
-        <a (click)="logid(i)" routerLink="/contatti/{{i}}">{{ persona.name }} {{ persona.email }}</a>
-    </div>
+<div class="container">
+  <p class="contacts-header">List contacts:</p>
+  <ul class="contacts-list">
+    <li *ngFor="let persona of persone; index as i">
+      <a (click)="logid(i)" routerLink="/contatti/{{i}}">{{ persona.name }} : {{ persona.email }}</a>
+    </li>
+  </ul>
+  <div class="button-group">
+    <button mat-raised-button color="primary" (click)="onPatchPerson()">Modifica</button>
+    <button mat-raised-button color="warn" (click)="onDeletePersona()">Delete</button>
+  </div>
 </div>
-<button mat-raised-button (click)="onDeletePersona()">Delete</button>
 
 <router-outlet></router-outlet>
- 

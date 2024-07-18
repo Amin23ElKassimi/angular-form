@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from '../service/firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reactive-form',
@@ -12,7 +13,9 @@ export class ReactiveFormComponent implements OnInit {
   homeform!: FormGroup;
 
 
-  constructor(private fireBase: FirebaseService) { }
+  constructor(private fireBase: FirebaseService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
@@ -40,6 +43,11 @@ export class ReactiveFormComponent implements OnInit {
         intext: this.homeform.value.intext
       }
     ).subscribe(data => { console.log(data) })
+
+    // Dopo aver inviato i dati, aggiungi un timeout di 1 secondo prima di reindirizzare
+    setTimeout(() => {
+      this.router.navigate(['/contatti']);
+    }, 500);
 
   }
 

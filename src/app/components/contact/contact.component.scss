@@ -1,0 +1,29 @@
+.profile-card {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card mat-card-header {
+    text-align: center;
+}
+
+.profile-card mat-card-title {
+    font-size: 1.5em;
+}
+
+.profile-card mat-card-subtitle {
+    font-size: 1.2em;
+    color: gray;
+}
+
+.profile-card mat-card-content p {
+    margin: 10px 0;
+}
+
+.loading-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: gray;
+}

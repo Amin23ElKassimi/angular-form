@@ -1,11 +1,13 @@
 <!-- L'errore "ctx.persona is undefined" è probabile che si verifichi perché il componente ContactComponent cerca di accedere alla proprietà persona prima che i dati siano completamente caricati e assegnati. Possiamo risolvere questo problema aggiungendo delle condizioni nel template per assicurarsi che i dati siano disponibili prima di tentare di renderizzarli. -->
-<div *ngIf="persona" [style.color]="persona.color">
-    <h2>Profilo di: {{ persona.name }}</h2>
-    <h3>
-    {{ persona.email }}
-    </h3>
-    <p>Colore : {{ persona.color }}</p>
-    <p>Descrizione:</p>
+<mat-card *ngIf="persona" [style.color]="persona.color" class="profile-card">
+  <mat-card-header>
+    <mat-card-title>Profilo di: {{ persona.name }}</mat-card-title>
+    <mat-card-subtitle>{{ persona.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Colore:</strong> {{ persona.color }}</p>
+    <p><strong>Descrizione:</strong></p>
     <p>{{ persona.intext }}</p>
-</div>
-<p *ngIf="!persona">Caricamento...</p>
+  </mat-card-content>
+</mat-card>
+<p *ngIf="!persona" class="loading-message">Caricamento...</p>
