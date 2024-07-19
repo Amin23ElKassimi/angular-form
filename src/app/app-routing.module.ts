@@ -7,6 +7,7 @@ import { ContattiComponent } from './components/contatti/contatti.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { UpdateformComponent } from './components/updateform/updateform.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/' },
@@ -18,7 +19,7 @@ const routes: Routes = [
     // Routers child
     children: [
       { path: ':id', component: ContactComponent },
-      { path: ':id/form', component: ReactiveFormComponent },
+      { path: ':id/patchform', component: UpdateformComponent },
     ]
   },
   { path: 'form', component: ReactiveFormComponent },

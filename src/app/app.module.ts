@@ -23,6 +23,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ContattiComponent } from './components/contatti/contatti.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { UpdateformComponent } from './components/updateform/updateform.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     HomeComponent,
     ContattiComponent,
     NotfoundComponent,
+    UpdateformComponent,
   ],
   imports: [
     BrowserModule,

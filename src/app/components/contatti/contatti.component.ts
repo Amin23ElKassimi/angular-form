@@ -25,7 +25,6 @@ export class ContattiComponent implements OnInit {
   ngOnInit(): void {
 
     this.people = this.fireBase.getPersone()
-
     this.fireBase.getPersone().subscribe((data: any) => {
       this.persone = Object.keys(data).map((key) => {
         // Aggiungere la proprieta che si chiama id e la fai uguale a data.key che genera firebase
