@@ -26,8 +26,6 @@ export class ReactiveFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       color: new FormControl('', Validators.required),
       intext: new FormControl('', Validators.required),
-
-
     })
 
 

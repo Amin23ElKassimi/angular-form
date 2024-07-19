@@ -26,10 +26,12 @@ export class ContattiComponent implements OnInit {
 
     this.people = this.fireBase.getPersone()
     this.fireBase.getPersone().subscribe((data: any) => {
-      this.persone = Object.keys(data).map((key) => {
+      this.persone = Object.keys(data).map((key, index) => {
         // Aggiungere la proprieta che si chiama id e la fai uguale a data.key che genera firebase
         data[key]['id'] = key
-        return data[key]
+        data[key]['index'] = index; // Aggiungi la posizione dell'array all'oggetto persona
+        return data[key];
+
       })
     })
 
@@ -43,7 +45,7 @@ export class ContattiComponent implements OnInit {
   }
 
   logid(id: number) {
-    console.log("actual id: " + this.persone[id].id)
+    console.log("actual id: " + this.persone[id].index)
     this.actualID = this.persone[id].id
   }
 
