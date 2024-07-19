@@ -1,3 +1,4 @@
+<!-- updateform.component.html -->
 <div class="form-container">
   <form [formGroup]="homeform" (ngSubmit)="onSubmit()">
     <mat-card>
@@ -27,8 +28,8 @@
             <mat-option value="blue">Blue</mat-option>
             <mat-option value="red">Red</mat-option>
             <mat-option value="yellow">Yellow</mat-option>
-            <mat-option value="cyan">cyan</mat-option>
-            <mat-option value="magenta">magent</mat-option>
+            <mat-option value="cyan">Cyan</mat-option>
+            <mat-option value="magenta">Magenta</mat-option>
             <mat-option value="orange">Orange</mat-option>
           </mat-select>
         </mat-form-field>
@@ -40,6 +41,7 @@
       </mat-card-content>
       <mat-card-actions>
         <button [disabled]="homeform.invalid" mat-raised-button color="primary" type="submit">Patch Data in DB</button>
+        <a mat-button color="secondary" (click)="lodid()">Log ID</a>
       </mat-card-actions>
     </mat-card>
   </form>

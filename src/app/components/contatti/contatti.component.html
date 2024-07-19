@@ -3,7 +3,7 @@
   <ul class="contacts-list">
     <li *ngFor="let persona of persone; index as i">
       <a (click)="logid(i)" routerLink="/contatti/{{i}}">{{ persona.name }} : {{ persona.email }}</a>
-      <button id="patchbtn" mat-raised-button color="primary" (click)="onPatchPerson()" routerLink="/contatti/{{i}}/patchform" >Patch</button>
+      <button id="patchbtn" mat-raised-button color="primary"  routerLink="/contatti/{{persona.id}}/patchform" >Patch</button>
     </li>
   </ul>
   <div class="button-group">

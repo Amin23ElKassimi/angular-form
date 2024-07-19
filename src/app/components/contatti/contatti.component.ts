@@ -42,26 +42,9 @@ export class ContattiComponent implements OnInit {
       })
   }
 
-
   logid(id: number) {
     console.log("actual id: " + this.persone[id].id)
     this.actualID = this.persone[id].id
   }
-
-  onPatchPerson() {
-    this.fireBase.patchPerson(this.actualID,
-      {}
-
-    )
-    // Dopo aver inviato i dati, aggiungi un timeout di 1 secondo prima di reindirizzare
-    setTimeout(() => {
-      this.router.navigate([`/patchForm`]);
-    }, 500);
-
-  }
-
-
-
-
 
 }

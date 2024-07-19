@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,9 +25,13 @@ export class FirebaseService {
     return this.http.delete(`${this.url}/${id}.json`)
   }
 
-  patchPerson(id: string, body: {}) {
+  patchPerson(id: string, formdata: {}) {
     console.log(`${this.url}/${id}.json`)
-    return this.http.patch(`${this.url}/${id}.json`, body)
+    return this.http.patch(`${this.url}/${id}.json`, formdata)
+  }
+
+  getPersonaById(id: string): Observable<any> {
+    return this.http.get(`${this.url}/${id}.json`);
   }
 
 
