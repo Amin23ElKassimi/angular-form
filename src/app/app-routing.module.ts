@@ -17,7 +17,8 @@ const routes: Routes = [
     canActivateChild: [AuthGuard],
     // Routers child
     children: [
-      { path: ':id', component: ContactComponent }
+      { path: ':id', component: ContactComponent },
+      { path: ':id/form', component: ReactiveFormComponent },
     ]
   },
   { path: 'form', component: ReactiveFormComponent },

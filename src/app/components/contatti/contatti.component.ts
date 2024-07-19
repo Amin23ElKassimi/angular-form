@@ -14,6 +14,7 @@ export class ContattiComponent implements OnInit {
   persone: any
   people: any
   actualID: string
+  router: any;
 
   // Constructor
   constructor(
@@ -53,8 +54,13 @@ export class ContattiComponent implements OnInit {
       {}
 
     )
+    // Dopo aver inviato i dati, aggiungi un timeout di 1 secondo prima di reindirizzare
+    setTimeout(() => {
+      this.router.navigate([`/patchForm`]);
+    }, 500);
 
   }
+
 
 
 
