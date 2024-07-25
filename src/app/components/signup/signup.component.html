@@ -1,0 +1,28 @@
+<!-- updateform.component.html -->
+<div class="form-container">
+  <form #subform="ngForm" (ngSubmit)="onSubmit(subform)">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Subscrition</mat-card-title>
+      </mat-card-header>
+      <!-- Card -->
+      <mat-card-content>
+        <!-- EMAIL -->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput name="email" type="email" required ngModel/>
+        </mat-form-field>
+        <!-- pASSWORD-->
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+           <input matInput name="password" type="password" required ngModel/>
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button  mat-raised-button color="primary" type="submit" [disabled]="!subform.valid">Subscribe</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
