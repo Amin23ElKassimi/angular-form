@@ -22,8 +22,12 @@ export class SigninComponent implements OnInit {
     // console.log(email, password)
     form.reset()
     this.authservice.signIn({ email: email, password: password, returnSecureToken: true }).subscribe(
-      data => {
+      (data: any) => {
         console.log(data)
+        // passiamo i dati dell'utente ricevuti nella post
+        this.authservice.createUser(data.email, data.localId, data.idToken, data.expiresIn)
+        // Salviamo i dati dell'utente in localstorage
+        localStorage.setItem('user', JSON.stringify(this.authservice.user))
       }
     )
   }
