@@ -9,12 +9,14 @@ import { AuthGuard } from './auth/auth.guard';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UpdateformComponent } from './components/updateform/updateform.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/' },
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
   {
     path: 'contatti', component: ContattiComponent, canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],

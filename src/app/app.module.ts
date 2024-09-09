@@ -25,6 +25,7 @@ import { ContattiComponent } from './components/contatti/contatti.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { UpdateformComponent } from './components/updateform/updateform.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SignupComponent } from './components/signup/signup.component';
     NotfoundComponent,
     UpdateformComponent,
     SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
