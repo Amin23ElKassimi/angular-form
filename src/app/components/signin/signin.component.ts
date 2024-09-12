@@ -32,6 +32,8 @@ export class SigninComponent implements OnInit {
         // Create the user object with the correct expiration date
         this.authservice.createUser(data.email, data.localId, data.idToken, expirationDate);
 
+        // Firebase ci risponde con dei dati relativi all'user che ha effettuato l'accesso noi dobbiamo buttarli nel localstorage
+
         // Store user information in localStorage
         localStorage.setItem('user', JSON.stringify(this.authservice.user));
 

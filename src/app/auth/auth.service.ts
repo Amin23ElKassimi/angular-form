@@ -35,6 +35,13 @@ export class AuthService {
     return this.http.post(this.signInUrl, body)
   }
 
+  signOut() {
+    // Header, body 
+    this.isLoggedIn = false,
+      this.user = null,
+      localStorage.removeItem('user')
+  }
+
   createUser(email: string, id: string, token: string, expirationdate: Date) {
     this.user = new User(email, id, token, expirationdate)
   }

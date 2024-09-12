@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // Se lutente e' salvato nello storage ripolpami la variabile
+    // Se lutente e' salvato nello storage ripolpami la variabile ogni volta che si aggiorna
     if (localStorage.getItem('user')) {
       const user = JSON.parse(localStorage.getItem("user"))
       this.authservice.createUser(user.email, user.id, user._token, user._expirationDate)
@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
 
   }
 
+  exit() {
+    this.authservice.signOut()
+  }
 
 
 
