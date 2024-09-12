@@ -17,18 +17,32 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    const email = form.value.email
-    const password = form.value.password
-    // console.log(email, password)
-    form.reset()
+    const email = form.value.email;
+    const password = form.value.password;
+
+    form.reset(); // Reset form right after extracting values
+
     this.authservice.signIn({ email: email, password: password, returnSecureToken: true }).subscribe(
       (data: any) => {
-        console.log(data)
-        // passiamo i dati dell'utente ricevuti nella post
-        this.authservice.createUser(data.email, data.localId, data.idToken, data.expiresIn)
-        // Salviamo i dati dell'utente in localstorage
-        localStorage.setItem('user', JSON.stringify(this.authservice.user))
+        console.log(data);
+
+        // Compute the expiration date based on Firebase's "expiresIn" field
+        const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000);
+
+        // Create the user object with the correct expiration date
+        this.authservice.createUser(data.email, data.localId, data.idToken, expirationDate);
+
+        // Store user information in localStorage
+        localStorage.setItem('user', JSON.stringify(this.authservice.user));
+
+        // Debugging: Ensure the user token is stored and valid
+        console.log("User stored:", this.authservice.user);
+      },
+      (error) => {
+        console.error("Error during sign in:", error);
+        // Handle error scenario appropriately, e.g., show an error message to the user
       }
-    )
+    );
   }
+
 }

@@ -18,9 +18,7 @@ export class ServizioProvaService {
     { nome: "Gaia", cognome: "papa", isOnline: false, color: "deeppink" }
   ]
 
-  getPersone() {
-    return this.persone
-  }
+
 
   getPersona(index: number) {
     return this.persone[index]

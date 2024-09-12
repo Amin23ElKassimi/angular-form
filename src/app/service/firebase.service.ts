@@ -1,12 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) { }
 
   // Url FIREBASE
   url: string = 'https://corso-angular-5a5b9-default-rtdb.europe-west1.firebasedatabase.app/persone'
@@ -17,7 +21,8 @@ export class FirebaseService {
 
 
   getPersone() {
-    return this.http.get(this.url + ".json")
+    console.log("Token being used:", this.authService.user.token);  // Debugging line
+    return this.http.get(`${this.url}.json?auth=${this.authService.user.token}`)
   }
 
 
